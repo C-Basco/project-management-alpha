@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from accounts.views import signup, user_login, user_logout
 
 urlpatterns = [

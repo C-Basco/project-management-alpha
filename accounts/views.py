@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from accounts.forms import SignUpForm, LoginForm
 
 
-# Create your views here.
 def signup(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
@@ -23,12 +22,12 @@ def signup(request):
                 return redirect("list_projects")
             else:
                 form.add_error("password", "the passwords do not match")
-        else:
-            form = SignUpForm()
-            context = {
-                "form": form,
-            }
-        return render(request, "accounts/signup.html", context)
+    else:
+        form = SignUpForm()
+        context = {
+            "form": form,
+        }
+    return render(request, "accounts/signup.html", context)
 
 
 def user_login(request):
