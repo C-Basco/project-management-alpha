@@ -7,14 +7,14 @@
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th> Name</th>
                     <th>Number of tasks</th>
                 </tr>
             </thead>
             <tbody>
                 {% for item in project_obj %}
                 <tr>
-                    <td>{{ item.name }}</td>
+                    <td><a href="{% url 'show_project' item.id %}">{{ item.name }}</a></td>
                     <td>{{ item.tasks.all|length }}</td>
                 </tr>
                 {% endfor %}
